@@ -29,7 +29,10 @@ def assets():
               help='Do not remove existing assets.')
 @click.option(
     '--production/--development', '-p/-d', default=False, is_flag=True,
-    help='Production mode copies files. Development mode symlinks files.'
+    help=(
+        'Copy (--production) / Symlink (--development) files '
+        '(default: --development).'
+    )
 )
 @pass_cli_config
 def build(cli_config, no_wipe, production):
